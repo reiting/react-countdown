@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import moment from 'moment';
+import './index.css';
 
 class Countdown extends React.Component {
+    // sets the state to be undefined so we can define it ourselves when needed
     state = {
         days: undefined,
         hours: undefined,
@@ -11,6 +13,11 @@ class Countdown extends React.Component {
     };
 
     componentDidMount() {
+        /* Creating a setInterval function that allows us to set consts. Days, hours, minutes,
+        and seconds are formatted by MomentJS. Countdown is then (the final date and time we 
+        want counted) minus now (the current date). Then we set the state to be the days, hours,
+        minutes, and seconds in the correct format. 
+         */
         this.interval = setInterval(()=> {
             const { timeTillDate, timeFormat } = this.props;
             const then = moment(timeTillDate, timeFormat);
@@ -61,6 +68,9 @@ class Countdown extends React.Component {
 // ========================================
 
 ReactDOM.render(
-    <Countdown />,
-    document.getElementById('root')
+	<Countdown 
+		timeTillDate="05 26 2019, 6:00 am" 
+		timeFormat="MM DD YYYY, h:mm a" 
+	/>, 
+	document.getElementById('root')
 );
