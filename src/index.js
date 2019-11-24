@@ -41,7 +41,7 @@ class Countdown extends React.Component {
         const { days, hours, minutes, seconds } = this.state;
         return (
             <div>
-                <h1>Countdown</h1>
+                <h1>Countdown To Christmas!</h1>
                 <div className='countdown-wrapper'>
                     <div className='countdown-item'>
                         {days}
@@ -69,7 +69,7 @@ class Countdown extends React.Component {
 
 ReactDOM.render(
 	<Countdown 
-		timeTillDate="05 26 2019, 6:00 am" 
+		timeTillDate="12 25 2019, 12:00 am" 
 		timeFormat="MM DD YYYY, h:mm a" 
 	/>, 
 	document.getElementById('root')
